@@ -39,8 +39,8 @@ namespace Calculadora
                 "\n6. Raiz" +
                 "\n7. Tabuada" +
                 "\n9. Converta decimal para binario" +
-                "\n10. Converta binario para decimal" +
-                "\n11. Converta decimal para hexadecimal"+
+                "\n10.Converta binario para decimal" +
+                "\n11. Bhaskara" +
                 "\n12. Converta hexadecimal para decimal"+
                 "\nEscolha uma das opcoes acima");
 
@@ -110,8 +110,38 @@ namespace Calculadora
                         break;
 
                     case 9:
-                        Coletar();
-                        Console.WriteLine("Informe um numero que deseja tranformar em binario " + this.calculadora.DecimalBinario());
+                       
+                        Console.WriteLine(this.calculadora.DecimalBinario());
+                        break;
+
+                    case 10:
+
+                        Console.WriteLine("Informe o numero binário: ");
+                        string valor = Console.ReadLine();
+                        int resultado = Convert.ToInt32(ModelCalculadora.BinarioDecimal(valor));
+                        Console.WriteLine($" O numero {valor} é igual a {resultado} ");
+                        Console.WriteLine();
+                        break;
+
+                    case 11:
+                        Console.WriteLine(this.calculadora.Bhaskara());
+                        break;
+
+                    case 12:
+                        int num_decimal =0;
+
+                        Console.WriteLine("Informe um numero em decimal : ");
+                        num_decimal = int.Parse(Console.ReadLine());
+
+                        string num_hexadecimal = num_decimal.ToString("X");
+                        Console.WriteLine(num_hexadecimal);
+
+
+                        break;
+
+                     case 13:
+                        Console.WriteLine(this.calculadora.DecimalHexa());
+
                         break;
 
                     default:
